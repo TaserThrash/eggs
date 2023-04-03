@@ -1,7 +1,7 @@
 
 //use createMobileButton(x, y, w, h, c, handle, type) to make a button
 
-let days, eggsToday = 0, dayCount;
+let days, eggsToday = 0, dayCount, entered = false;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -24,6 +24,11 @@ function setup() {
 }
 
 function draw() {
+  if(entered){
+    background("#000000");
+    return;
+  }
+
   background(255);
 
   if((days && eggsToday >= 0 && dayCount)){
@@ -60,6 +65,12 @@ function touchStarted(){
 }
 
 const addNewElement = () => {
+  if(entered){
+    return;
+  }
+
+  entered = true;
+
   var reference = database.ref("days/" + dayCount);
   reference.set(eggsToday);
 
