@@ -18,8 +18,8 @@ function setup() {
     dayCount = data.val();
   });
 
-  createMobileButton(width / 2, height / 2.2, width / 50, height / 50, "green", () => {eggsToday++}, "press");
-  createMobileButton(width / 2, height / 1.8, width / 50, height / 50, "red", () => {eggsToday--}, "press");
+  createMobileButton(width / 2, height / 2.2, width / 50, height / 50, "green", () => {eggsToday += 0.5}, "press");
+  createMobileButton(width / 2, height / 1.8, width / 50, height / 50, "red", () => {eggsToday -= 0.5}, "press");
   createMobileButton(width / 1.5, height / 2, width / 20, height / 20, "red", addNewElement, "press");
 }
 
